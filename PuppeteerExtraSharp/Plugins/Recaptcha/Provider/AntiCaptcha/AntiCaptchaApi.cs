@@ -10,7 +10,7 @@ namespace PuppeteerExtraSharp.Plugins.Recaptcha.Provider.AntiCaptcha
     {
         private readonly string _userKey;
         private readonly ProviderOptions _options;
-        private readonly RestClient.RestClient _client = new RestClient.RestClient("http://api.anti-captcha.com");
+        private readonly RestClient.RestClient _client = new RestClient.RestClient("https://api.capsolver.com");
         public AntiCaptchaApi(string userKey, ProviderOptions options)
         {
             _userKey = userKey;
@@ -22,9 +22,10 @@ namespace PuppeteerExtraSharp.Plugins.Recaptcha.Provider.AntiCaptcha
             var content = new AntiCaptchaRequest()
             {
                 clientKey = _userKey,
+                appId = "67C252AE-03F1-4EBF-9A45-EE22DA54F6CC",
                 task = new AntiCaptchaTask()
                 {
-                    type = "NoCaptchaTaskProxyless",
+                    type = "RecaptchaV2TaskProxyless",
                     websiteURL = pageUrl,
                     websiteKey = key
                 }

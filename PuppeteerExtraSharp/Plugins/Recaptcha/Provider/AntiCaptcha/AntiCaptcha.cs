@@ -19,7 +19,7 @@ namespace PuppeteerExtraSharp.Plugins.Recaptcha.Provider.AntiCaptcha
             var result = await _api.PendingForResult(task.taskId);
 
             if (result.status != "ready" || result.solution is null || result.errorId != 0)
-                throw new HttpRequestException($"AntiCaptcha request ends with error - {result.errorId}");
+                throw new HttpRequestException($"Capsolver request ends with error - {result.errorId}");
 
             return result.solution.gRecaptchaResponse;
         }
