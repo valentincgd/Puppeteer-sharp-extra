@@ -38,7 +38,7 @@ namespace PuppeteerExtraSharp.Plugins.Recaptcha.Provider.AntiCaptcha
         }
 
 
-        public async Task<TaskResultModel> PendingForResult(int taskId, CancellationToken token = default)
+        public async Task<TaskResultModel> PendingForResult(string taskId, CancellationToken token = default)
         {
             var content = new RequestForResultTask()
             {

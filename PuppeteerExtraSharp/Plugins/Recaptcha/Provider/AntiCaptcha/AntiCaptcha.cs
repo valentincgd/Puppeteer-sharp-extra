@@ -15,7 +15,7 @@ namespace PuppeteerExtraSharp.Plugins.Recaptcha.Provider.AntiCaptcha
         public async Task<string> GetSolution(string key, string pageUrl, string proxyStr = null)
         {
             var task = await _api.CreateTaskAsync(pageUrl, key);
-            await System.Threading.Tasks.Task.Delay(_options.StartTimeoutSeconds * 1000);
+            await System.Threading.Tasks.Task.Delay(1000);
             var result = await _api.PendingForResult(task.taskId);
 
             if (result.status != "ready" || result.solution is null || result.errorId != 0)

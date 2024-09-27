@@ -16,13 +16,14 @@ namespace PuppeteerExtraSharp.Plugins.Recaptcha.Provider.AntiCaptcha.Models
     public class RequestForResultTask
     {
         public string clientKey { get; set; }
-        public int taskId { get; set; }
+        public string taskId { get; set; }
     }
 
     public class AntiCaptchaTaskResult
     {
         public int errorId { get; set; }
-        public int taskId { get; set; }
+        public string status { get; set; }
+        public string taskId { get; set; }
     }
 
 
